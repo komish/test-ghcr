@@ -56,17 +56,10 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: Extract file
-        uses: shrink/actions-docker-extract@v1
-        id: extract
-        with:
-          image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}@${{ steps.build-and-push.outputs.digest}}
-          path: /hello.txt
-
       - name: Upload file to release
         uses: AButler/upload-release-assets@v2.0
         id: upload-release-asset
         with:
-          files: ${{ steps.extract.outputs.destination }}/hello.txt
+          files: hello.txt
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           release-tag: ${{ steps.meta.outputs.tags }}
