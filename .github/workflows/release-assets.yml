@@ -15,7 +15,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       packages: write
 
     steps:
@@ -62,4 +62,3 @@ jobs:
         with:
           files: hello.txt
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          release-tag: v0.0.8
