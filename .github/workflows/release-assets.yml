@@ -62,3 +62,4 @@ jobs:
         with:
           files: hello.txt
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+          release-tag: v0.0.8
