@@ -59,7 +59,7 @@ jobs:
       - uses: shrink/actions-docker-extract@v2
         id: extract
         with:
-          image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ .steps.meta.outputs.version }}
+          image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.version }}
           path: /hello.txt
 
       - name: Upload file to release
