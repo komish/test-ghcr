@@ -62,4 +62,3 @@ jobs:
         with:
           files: hello.txt
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          release-tag: ${{ steps.meta.outputs.tags }}
